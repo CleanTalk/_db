@@ -150,4 +150,9 @@ class DB
     {
         return (bool)$this->execute("SHOW TABLES LIKE '" . $table_name . "'");
     }
+
+    public function getLastError()
+    {
+        return 'Not implemented';
+    }
 }
