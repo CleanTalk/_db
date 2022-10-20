@@ -42,6 +42,7 @@ class DB
 
     public function __construct()
     {
+        $this->init();
     }
 
     public function __clone()
@@ -67,7 +68,7 @@ class DB
      * Initialize Database object and write it to property.
      * Set tables prefix.
      */
-    private function init()
+    protected function init()
     {
     }
 
