@@ -30,6 +30,11 @@ abstract class Db
     /**
      * @var array Processed result
      */
+    public $db_result = array();
+
+    /**
+     * @var array Processed result
+     */
     public $result = array();
 
     /**
@@ -102,12 +107,13 @@ abstract class Db
     /**
      * Run any raw request
      *
-     * @param $query
+     * @param $query string
+     * @param $return_affected bool Need to the drupal class
      *
      * @return bool|int|void Raw result
      * @psalm-suppress PossiblyUnusedParam
      */
-    abstract public function execute($query);
+    abstract public function execute($query, $return_affected = false);
 
     /**
      * Fetchs first column from query.
