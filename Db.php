@@ -104,6 +104,8 @@ abstract class Db
 		return vsprintf($query, $vars);
 	}
 
+    abstract public function prepareAndExecute($query, $vars = array());
+
     /**
      * Run any raw request
      *
