@@ -30,11 +30,6 @@ abstract class Db
     /**
      * @var array Processed result
      */
-    public $db_result = array();
-
-    /**
-     * @var array Processed result
-     */
     public $result = array();
 
     /**
@@ -104,7 +99,11 @@ abstract class Db
 		return vsprintf($query, $vars);
 	}
 
-    abstract public function prepareAndExecute($query, $vars = array());
+    public function prepareAndExecute($query, $vars = array())
+    {
+        $this->prepare($query, $vars);
+        return $this->execute($this->query);
+    }
 
     /**
      * Run any raw request
